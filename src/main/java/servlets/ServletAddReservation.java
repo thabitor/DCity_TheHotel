@@ -24,8 +24,8 @@ public class ServletAddReservation extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        response.sendRedirect(request.getContextPath() + "/reservations/add.jsp?id=" + id);
+        int id = Integer.parseInt(request.getParameter("room_id"));
+        response.sendRedirect(request.getContextPath() + "/reservations/add.jsp?room_id=" + id);
     }
 
     @Override
@@ -42,6 +42,6 @@ public class ServletAddReservation extends HttpServlet {
         int id = (reservationDAO.insert(new Reservation(date_start, date_end, (date_end.getDayOfYear()-date_start.getDayOfYear())*price, capacity, client, room))).getReservationId(); // adds the new product to the list and gets its id automatically
 
 
-         response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?id=" + id); // redirects to the new product page
+         response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?reservation_id=" + id); // redirects to the new product page
     }
 }

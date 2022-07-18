@@ -9,12 +9,20 @@ import java.io.IOException;
 public class ServletReservation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        if(id == null){
-            response.sendRedirect(request.getContextPath() + "/reservations/all.jsp"); // redirects to the room list page
+        String clientId = request.getParameter("client_id");
+        String clientEmail = request.getParameter("client_email");
+        String reservationId = request.getParameter("reservation_id");
+        if(clientId != null){
+            response.sendRedirect(request.getContextPath() + "/reservations/all.jsp?client_id=" + clientId); // redirects to the client's reservation list
+        }
+        else if (clientEmail != null) {
+            response.sendRedirect(request.getContextPath() + "/reservations/all.jsp?client_email=" + clientEmail); // redirects to the client's reservation list
+        }
+        else if (reservationId != null){
+            response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?reservation_id=" + reservationId); // redirects to the reservation details page
         }
         else {
-            response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?id=" + id); // redirects to the room page
+            response.sendRedirect(request.getContextPath() + "/reservations/all.jsp"); // redirects to the reservations list page
         }
     }
 
