@@ -32,7 +32,7 @@ CREATE TABLE `client` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
-  `telephone` int(11) NOT NULL,
+  `telephone` varchar(11) NOT NULL,
   `birth_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -53,8 +53,8 @@ CREATE TABLE `reservation` (
   `reservation_id` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL,
-  `date_start` datetime NOT NULL,
-  `date_end` datetime NOT NULL,
+  `date_start` date NOT NULL,
+  `date_end` date NOT NULL,
   `price` double NOT NULL,
   `capacity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -78,7 +78,6 @@ CREATE TABLE `room` (
   `floor` int(11) NOT NULL,
   `capacity` int(11) NOT NULL,
   `beds` int(11) NOT NULL,
-  `available` tinyint(1) NOT NULL,
   `price` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
