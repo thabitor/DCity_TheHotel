@@ -24,6 +24,13 @@
     <title>Add reservation</title>
 </head>
 <body>
+    <%
+        String message="";
+        if(request.getAttribute("message") != null)
+            message = request.getAttribute("message").toString();
+            System.out.println(message);
+    %>
+    <p><%= message %></p>
     <form action="add" method="post">
         <input type="hidden" name="client_id" value="1">
         <input type="hidden" name="room_id" value="<%= room.getRoomId() %>">
