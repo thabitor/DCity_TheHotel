@@ -11,6 +11,13 @@ html {
     font-size: 1rem;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
     float: left;
 }
@@ -54,7 +61,31 @@ html {
     float: right;
 }
 
-footer {
+.title {
+    height: 300px;
+    width: 100%;
+    background: url("https://katsgoneglobal.com/wp-content/uploads/2018/01/Grand-place-in-Brussels.jpg") no-repeat;
+    background-size: cover;
+    padding: 10px;
+    color: snow;
+}
+
+.title h1 {
+    font-size: 4rem;
+    padding: 5px;
+}
+
+.title p {
+    font-size: 2rem;
+    padding: 5px;
+}
+
+.footer {
     background-color: black;
     color: snow;
+    width: 100%;
+}
+
+.footer ul {
+    display: inline;
 }

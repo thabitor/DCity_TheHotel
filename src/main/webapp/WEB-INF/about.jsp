@@ -1,4 +1,4 @@
-<section>
+<section class="container">
     <h3>READY FOR A NEW STYLE OF LUXURY IN BRUSSELS?</h3>
     <h2>A VIEW FROM THE TOP</h2>
     <p>Kick off your urban adventures with a new perspective on Brussels. Standing tall above the Brussels skyline, the Hotel gives you a city view with a difference – come join us up here and experience a stay like no other.</p>

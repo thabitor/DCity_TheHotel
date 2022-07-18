@@ -2,5 +2,5 @@
 <!DOCTYPE html>
 <head>
     <title>The Hotel | </title>
-    <link type="text/css" rel="stylesheet" href="/hotel/assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/Hotel/assets/css/style.css">
 </head>
