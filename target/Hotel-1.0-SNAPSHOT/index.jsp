@@ -22,7 +22,7 @@
     <h1>The Hotel</h1>
     <p>Where your dreams come true... for sure</p>
     <a href="rooms">rooms list</a>
-    <a href="reservations/add.jsp">Make a new reservation</a>
+    <a href="reservations">Make a new reservation</a>
     <a href="reservations/requestReservation.jsp">See my reservations</a>
 
     <form action="all" method="get">

@@ -42,9 +42,8 @@ public class ServletAddReservation extends HttpServlet {
 
         if (reservationDAO.checkAvaible(date_start,date_end,room.getRoomId())){
             int id = (reservationDAO.insert(new Reservation(date_start, date_end, (date_end.getDayOfYear()-date_start.getDayOfYear())*price, capacity, client, room))).getReservationId(); // adds the new product to the list and gets its id automatically
-            response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?id=" + id); // redirects to the new product page
+            response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?reservation_id=" + id); // redirects to the new product page
         }
         else response.sendRedirect(request.getContextPath() + "/rooms/all.jsp");
-        System.out.println("pas marché");
     }
 }
