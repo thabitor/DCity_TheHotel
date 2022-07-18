@@ -31,17 +31,23 @@ public class ServletAddReservation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // gets parameters from the form in reservations/add.jsp
-        Client client =  clientDAO.get(Integer.parseInt(request.getParameter("client_id")));
+
         Room room = roomDAO.get(Integer.parseInt(request.getParameter("room_id")));
         System.out.println(request.getParameter("date_start"));
         LocalDate date_start = LocalDate.parse(request.getParameter("date_start"));
         LocalDate date_end = LocalDate.parse(request.getParameter("date_end"));
+        Client client =  clientDAO.get(Integer.parseInt(request.getParameter("client_id")));
         double price = Double.parseDouble(request.getParameter("price"));
         int capacity = Integer.parseInt(request.getParameter("capacity"));
 
-        int id = (reservationDAO.insert(new Reservation(date_start, date_end, (date_end.getDayOfYear()-date_start.getDayOfYear())*price, capacity, client, room))).getReservationId(); // adds the new product to the list and gets its id automatically
+        if (reservationDAO.checkAvaible(date_start,date_end,room.getRoomId())){
+            int id = (reservationDAO.insert(new Reservation(date_start, date_end, (date_end.getDayOfYear()-date_start.getDayOfYear())*price, capacity, client, room))).getReservationId(); // adds the new product to the list and gets its id automatically
+            response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?id=" + id); // redirects to the new product page
+        }
+        else response.sendRedirect(request.getContextPath() + "/rooms/all.jsp");
+        System.out.println("pas marché");
 
 
-         response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?id=" + id); // redirects to the new product page
+
     }
 }
