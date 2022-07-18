@@ -20,25 +20,27 @@
     <title>Rooms</title>
 </head>
 <body>
-<div>
-    <h1>Room list</h1>
-    <ul>
-        <% for (Room room : rooms) { %>
-        <li>
-            <div>
-                <p><span>id:</span> <%= room.getRoomId() %></p>
-                <p><span>description:</span> <%= room.getDescription() %></p>
-                <p><span>floor:</span> <%= room.getFloor() %></p>
-                <p><span>capacity:</span> <%= room.getCapacity() %></p>
-                <p><span>beds:</span> <%= room.getBeds() %></p>
-                <p><span>price:</span> $<%= room.getPrice() %></p>
-                <p><a href="../rooms?id=<%= room.getRoomId() %>">room details</a></p>
-            </div>
-        </li>
-        <% } %>
-    </ul>
-</div>
-
+    <div>
+        <h1>Room list</h1>
+        <ul>
+            <% for (Room room : rooms) { %>
+            <li>
+                <div>
+                    <p><span>id:</span> <%= room.getRoomId() %></p>
+                    <p><span>description:</span> <%= room.getDescription() %></p>
+                    <p><span>floor:</span> <%= room.getFloor() %></p>
+                    <p><span>capacity:</span> <%= room.getCapacity() %></p>
+                    <p><span>beds:</span> <%= room.getBeds() %></p>
+                    <p><span>price:</span> $<%= room.getPrice() %></p>
+                    <p><a href="../rooms?room_id=<%= room.getRoomId() %>">room details</a></p>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <div>
+        <a href="../">home</a>
+    </div>
 
 </body>
 </html>

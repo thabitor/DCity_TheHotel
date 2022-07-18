@@ -14,7 +14,7 @@
 <%
     HotelService service = HotelService.getInstance();
     RoomDAO roomDAO = new RoomDAO(service.getManager());
-    String id = request.getParameter("id"); // these variables change everytime we load this page
+    String id = request.getParameter("room_id"); // these variables change everytime we load this page
     if(id == null) {
         response.setStatus(404);
         return;
@@ -52,7 +52,7 @@
 <%--    </li>--%>
 <%--    <% } %>--%>
     <div>
-        <a href="../reservations/add?id=<%= room.getRoomId() %>">book this room</a>
+        <a href="../reservations/add?room_id=<%= room.getRoomId() %>">book this room</a>
     </div>
     <div>
         <a href="../rooms">back to rooms</a>
