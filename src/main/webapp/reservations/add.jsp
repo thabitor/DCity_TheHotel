@@ -12,7 +12,7 @@
 <%
     HotelService service = HotelService.getInstance();
     RoomDAO roomDAO = new RoomDAO(service.getManager());
-    String id = request.getParameter("id"); // these variables change everytime we load this page
+    String id = request.getParameter("room_id"); // these variables change everytime we load this page
     if(id == null) {
         response.setStatus(404);
         return;

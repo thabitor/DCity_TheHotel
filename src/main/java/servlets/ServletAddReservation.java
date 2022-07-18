@@ -24,8 +24,8 @@ public class ServletAddReservation extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        response.sendRedirect(request.getContextPath() + "/reservations/add.jsp?id=" + id);
+        int id = Integer.parseInt(request.getParameter("room_id"));
+        response.sendRedirect(request.getContextPath() + "/reservations/add.jsp?room_id=" + id);
     }
 
     @Override
@@ -46,8 +46,5 @@ public class ServletAddReservation extends HttpServlet {
         }
         else response.sendRedirect(request.getContextPath() + "/rooms/all.jsp");
         System.out.println("pas marché");
-
-
-
     }
 }

@@ -9,12 +9,12 @@ import java.io.IOException;
 public class ServletRoom extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        String id = request.getParameter("room_id");
         if(id == null){
             response.sendRedirect(request.getContextPath() + "/rooms/all.jsp"); // redirects to the room list page
         }
         else {
-            response.sendRedirect(request.getContextPath() + "/rooms/room.jsp?id=" + id); // redirects to the room page
+            response.sendRedirect(request.getContextPath() + "/rooms/room.jsp?room_id=" + id); // redirects to the room page
         }
     }
 
