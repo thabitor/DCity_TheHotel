@@ -40,10 +40,32 @@ public class ServletAddReservation extends HttpServlet {
         double price = Double.parseDouble(request.getParameter("price"));
         int capacity = Integer.parseInt(request.getParameter("capacity"));
 
-        if (reservationDAO.checkAvaible(date_start,date_end,room.getRoomId())){
-            int id = (reservationDAO.insert(new Reservation(date_start, date_end, (date_end.getDayOfYear()-date_start.getDayOfYear())*price, capacity, client, room))).getReservationId(); // adds the new product to the list and gets its id automatically
-            response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?reservation_id=" + id); // redirects to the new product page
+        int checkedReservationResponse=reservationDAO.checkAvaible(date_start,date_end,room.getRoomId());
+        switch (checkedReservationResponse){
+            case 1 :
+                request.setAttribute("message", "Your date start is unavailable");
+                request.getRequestDispatcher("/reservations/add.jsp?room_id=" + room.getRoomId()).forward(request, response);
+                break;
+            case 2 :
+                request.setAttribute("message", "Your end date is unavailable");
+                request.getRequestDispatcher("/reservations/add.jsp?room_id=" + room.getRoomId()).forward(request, response);
+                break;
+            case 3 :
+                request.setAttribute("message", "Both dates are in a reserved period ");
+                request.getRequestDispatcher("/reservations/add.jsp?room_id=" + room.getRoomId()).forward(request, response);
+                break;
+            case 4 :
+                request.setAttribute("message", "There are already a reserved date in your period ");
+                request.getRequestDispatcher("/reservations/add.jsp?room_id=" + room.getRoomId()).forward(request, response);
+                break;
+            case 0 :
+                int id = (reservationDAO.insert(new Reservation(date_start, date_end, (date_end.getDayOfYear()-date_start.getDayOfYear())*price, capacity, client, room))).getReservationId(); // adds the new product to the list and gets its id automatically
+                response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?reservation_id=" + id);
+                break;
         }
-        else response.sendRedirect(request.getContextPath() + "/rooms/all.jsp");
+
+
+
+
     }
 }

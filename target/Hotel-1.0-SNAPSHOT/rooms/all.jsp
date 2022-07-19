@@ -2,45 +2,38 @@
 <%@ page import="entities.Room" %>
 <%@ page import="java.util.List" %>
 <%@ page import="services.HotelService" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: JAVA
-  Date: 15-07-22
-  Time: 13:55
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     HotelService service = HotelService.getInstance();
     RoomDAO roomDAO = new RoomDAO(service.getManager());
     List<Room> rooms = roomDAO.getAll();
 %>
-<html>
-<head>
-    <title>Rooms</title>
-</head>
-<body>
-    <div>
-        <h1>Room list</h1>
-        <ul>
-            <% for (Room room : rooms) { %>
-            <li>
-                <div>
-                    <p><span>id:</span> <%= room.getRoomId() %></p>
-                    <p><span>description:</span> <%= room.getDescription() %></p>
-                    <p><span>floor:</span> <%= room.getFloor() %></p>
-                    <p><span>capacity:</span> <%= room.getCapacity() %></p>
-                    <p><span>beds:</span> <%= room.getBeds() %></p>
-                    <p><span>price:</span> $<%= room.getPrice() %></p>
-                    <p><a href="../rooms?room_id=<%= room.getRoomId() %>">room details</a></p>
+<%@ include file="../header.jsp" %>
+<div class="container">
+    <h2>Rooms & Tariff</h2>
+    <!-- form -->
+    <div class="row">
+        <% for (Room room : rooms) { %>
+        <div class="col-sm-6 wowload fadeInUp">
+            <div class="rooms"><img src="../images/photos/<%= room.getRoomId() %>.jpg" class="img-responsive">
+                <div class="info"><h3><%= room.getBeds() %>-bed Suite | Capacity: <%= room.getCapacity() %> people</h3>
+                    <p> <%= room.getDescription() %></p>
+                    <a href="room.jsp?room_id=<%= room.getRoomId() %>" class="btn btn-default">Check Details</a>
                 </div>
-            </li>
-            <% } %>
-        </ul>
+            </div>
+        </div>
+        <% } %>
     </div>
-    <div>
-        <a href="../">home</a>
-    </div>
-
-</body>
-</html>
+<%--    <div class="text-center">--%>
+<%--        <ul class="pagination">--%>
+<%--            <li class="disabled"><a href="#">«</a></li>--%>
+<%--            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>--%>
+<%--            <li><a href="#">2</a></li>--%>
+<%--            <li><a href="#">3</a></li>--%>
+<%--            <li><a href="#">4</a></li>--%>
+<%--            <li><a href="#">5</a></li>--%>
+<%--            <li><a href="#">»</a></li>--%>
+<%--        </ul>--%>
+<%--    </div>--%>
+</div>
+<%@ include file="../footer.jsp" %>
