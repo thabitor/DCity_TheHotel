@@ -5,7 +5,6 @@
 <%@ page import="java.util.stream.Collectors" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-
     String clientEmail = request.getParameter("client_email");
     HotelService service = HotelService.getInstance();
     ReservationDAO reservationDAO = new ReservationDAO(service.getManager());

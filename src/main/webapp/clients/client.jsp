@@ -1,16 +1,41 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: JAVA
-  Date: 18/07/2022
-  Time: 15:23
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="services.HotelService" %>
+<%@ page import="daos.ClientDAO" %>
+<%@ page import="entities.Client" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Client details</title>
-</head>
-<body>
+<%
+    HotelService service = HotelService.getInstance();
+    ClientDAO clientDAO = new ClientDAO(service.getManager());
+    String clientId = request.getParameter("client_id"); // these variables change everytime we load this page
+    if (clientId == null) {
+        response.setStatus(404);
+        return;
+    }
+    Client client = clientDAO.get(Integer.parseInt(clientId));
+%>
+<%@ include file="../header.jsp" %>
+<div>
+    <h1>Client details</h1>
+    <ul>
+        <li>
+            <div>
+                <p><span>Client number:</span> <%=client.getClientId()%>
+                </p>
+                <p><span>First name:</span> <%=client.getFirstName()%>
+                </p>
+                <p><span>Last name:</span> <%=client.getLastName()%>
+                </p>
+                <p><span>Date of birth:</span> <%=client.getBirthDate()%>
+                </p>
+                <p><span>Email address:</span> <%=client.getMail()%>
+                </p>
+                <p><span>Phone number:</span> $<%=client.getTelephone()%>
+                </p>
+            </div>
 
-</body>
-</html>
+        </li>
+    </ul>
+    <div>
+        <a href="../reservations?client_id=<%=client.getClientId()%>">See my reservations</a>
+    </div>
+</div>
+<%@ include file="../footer.jsp" %>
