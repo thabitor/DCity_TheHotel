@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-5 col-md-4">
                 <h3>Reservation</h3>
-                <form role="form" action="findRoomDate" class="wowload fadeInRight">
+                <form role="form" action="findRoomDate" method="post" class="wowload fadeInRight">
 <%--                    <div class="form-group">--%>
 <%--                        <input type="text"  name="first_name" class="form-control" placeholder="First Name">--%>
 <%--                    </div>--%>
@@ -65,7 +65,7 @@
 <%--                    </div>--%>
                     <div class="form-group">
 <%--                        <div class="row">--%>
-                                <input type="date" name="start_date" class="form-control" value="<%= LocalDate.now() %>">
+                                <input type="date" name="date_search" class="form-control" value="<%= LocalDate.now() %>">
 <%--                            <div class="col-xs-4">--%>
 <%--                                <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">--%>
 <%--                                    <option>Date</option>--%>
