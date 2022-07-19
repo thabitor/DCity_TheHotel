@@ -1,13 +1,6 @@
 <%@ page import="services.HotelService" %>
 <%@ page import="daos.ReservationDAO" %>
 <%@ page import="entities.Reservation" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: JAVA
-  Date: 15-07-22
-  Time: 15:26
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     HotelService service = HotelService.getInstance();
@@ -19,11 +12,7 @@
     }
     Reservation reservation = reservationDAO.get(Integer.parseInt(id));
 %>
-<html>
-<head>
-    <title>Reservation details</title>
-</head>
-<body>
+<%@ include file="../header.jsp" %>
     <h1>Reservation details</h1>
     <ul>
         <li>
@@ -42,6 +31,4 @@
     <div>
         <a href="../rooms">rooms list</a>
     </div>
-</body>
-</html>
-
+<%@ include file="../footer.jsp" %>

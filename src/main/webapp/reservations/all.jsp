@@ -2,14 +2,7 @@
 <%@ page import="daos.ReservationDAO" %>
 <%@ page import="entities.Reservation" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.stream.Collectors" %><%--
-  Created by IntelliJ IDEA.
-  User: JAVA
-  Date: 18/07/2022
-  Time: 09:18
-  To change this template use File | Settings | File Templates.
---%>
-
+<%@ page import="java.util.stream.Collectors" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 
@@ -29,11 +22,7 @@
                 .collect(Collectors.toList());
     }
 %>
-<html>
-<head>
-    <title>All reservation</title>
-</head>
-<body>
+<%@ include file="../header.jsp" %>
 <div>
     <h1>Reservation list</h1>
     <ul>
@@ -51,9 +40,5 @@
         <% } %>
     </ul>
 </div>
-
-</body>
-</html>
-
-
+<%@ include file="../footer.jsp" %>
 <%--&client_email=<%= reservation.getClient().getMail() %>--%>
