@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1ce371a-5090-4a50-88f2-90db292a5a37" name="Changes" comment="added see usr reservations">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daos/ReservationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/ReservationDAO.java" afterDir="false" />
@@ -19,6 +20,31 @@
       <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/WEB-INF/classes/servlets/ServletAddReservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/WEB-INF/classes/servlets/ServletAddReservation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/daos/ReservationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/daos/ReservationDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/servlets/ServletAddReservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/ServletAddReservation.class" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/about.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/head.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/reservations/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/reservations/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/reservations/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/reservations/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/reservations/requestReservation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/reservations/requestReservation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/reservations/reservation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/reservations/reservation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/rooms/all.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/rooms/room.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/WEB-INF/about.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/WEB-INF/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/WEB-INF/head.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/WEB-INF/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/reservations/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/reservations/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/reservations/reservation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/reservations/reservation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/rooms/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/rooms/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/rooms/room.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Hotel-1.0-SNAPSHOT/rooms/room.jsp" afterDir="false" />
+>>>>>>> marcelo
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +98,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;&lt;databases&gt;&lt;list&gt;&lt;schema-mapping-item&gt;&lt;source-data-source-id&gt;966ae45f-6d3d-422e-b4d5-abab59bde975&lt;/source-data-source-id&gt;&lt;source-path&gt;schema/\&quot;hotel\&quot;&lt;/source-path&gt;&lt;target-data-source-id&gt;966ae45f-6d3d-422e-b4d5-abab59bde975&lt;/target-data-source-id&gt;&lt;target-path&gt;schema/\&quot;hotel\&quot;&lt;/target-path&gt;&lt;/schema-mapping-item&gt;&lt;/list&gt;&lt;/databases&gt;&lt;/schema-mapping&gt;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/JAVA/Desktop/JAVA/java ee/TheHotel/src/main/webapp/rooms&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -84,8 +111,17 @@
   }
 }</component>
   <component name="RecentsManager">
+<<<<<<< HEAD
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\JAVA\Desktop\Bibliothèque - Bruform\JavaEE\TheHotel\src\main\webapp\rooms" />
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JAVA\Desktop\JAVA\java ee\TheHotel\src\main\webapp\rooms" />
+      <recent name="C:\Users\JAVA\Desktop\JAVA\java ee\TheHotel\src\main\webapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\JAVA\Desktop\JAVA\java ee\TheHotel\src\main\webapp\rooms" />
+>>>>>>> marcelo
     </key>
   </component>
   <component name="RunManager">
@@ -187,10 +223,16 @@
       <updated>1658127210060</updated>
       <workItem from="1658127212296" duration="11026000" />
       <workItem from="1658146296968" duration="669000" />
+<<<<<<< HEAD
       <workItem from="1658147105065" duration="53000" />
       <workItem from="1658147216910" duration="4510000" />
       <workItem from="1658212424608" duration="5166000" />
       <workItem from="1658217718121" duration="1716000" />
+=======
+      <workItem from="1658147215275" duration="4744000" />
+      <workItem from="1658213185185" duration="6106000" />
+      <workItem from="1658220669326" duration="128000" />
+>>>>>>> marcelo
     </task>
     <task id="LOCAL-00001" summary="added see usr reservations">
       <created>1658143919594</created>
