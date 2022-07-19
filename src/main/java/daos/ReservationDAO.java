@@ -1,12 +1,14 @@
 package daos;
 
 import entities.Reservation;
+import entities.Room;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -83,5 +85,16 @@ public class ReservationDAO {
 
         }
         return 0;
+    }
+
+    public List<Room> getRoomsDate(LocalDate date){
+        List<Reservation> reservations = this.getAll();
+        List<Room> rooms = new ArrayList<>();
+        for (Reservation reservation : reservations) {
+            if(date.isBefore(reservation.getDateStart())||date.isAfter(reservation.getDateEnd())){
+                rooms.add(reservation.getRoom());
+            }
+        }
+        return rooms;
     }
 }

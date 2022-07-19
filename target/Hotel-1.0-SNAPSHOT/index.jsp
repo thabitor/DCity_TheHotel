@@ -34,5 +34,11 @@
         </select>
         <button type="submit">get reservations</button>
     </form>
+    <form action="findRoomDate" method="post">
+        <label for="date_search">Looking for a date ? </label>
+        <input type="date" name="date_search" id="date_search">
+        <button type="submit">check this date</button>
+    </form>
+
 </body>
 </html>
