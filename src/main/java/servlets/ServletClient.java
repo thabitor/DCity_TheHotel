@@ -1,8 +1,12 @@
 package servlets;
 
+import Exceptions.ClientExistsException;
+import daos.ClientDAO;
+import daos.ReservationDAO;
 import entities.Client;
 import entities.Reservation;
 import entities.Client;
+import services.HotelService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,14 +15,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "ServletClient", value = "/clients")
     public class ServletClient extends HttpServlet {
+
+    private final HotelService service = HotelService.getInstance();
+    ReservationDAO reservationDAO = new ReservationDAO(service.getManager());
+    ClientDAO clientDAO = new ClientDAO(service.getManager());
+
+    private boolean clientExists;
+
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String id = request.getParameter("client_id");
             if(id == null){
-                response.sendRedirect(request.getContextPath() + "/clients/all.jsp"); // redirects to the client list page
+                response.sendRedirect(request.getContextPath() + "/clients/signup.jsp"); // redirects to the client list page
             }
             else {
                 response.sendRedirect(request.getContextPath() + "/clients/client.jsp?client_id=" + id); // redirects to the client page
@@ -27,20 +40,36 @@ import java.time.LocalDate;
 
         @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            Client client = clientDAO.get(Integer.parseInt(request.getParameter("client_id")));
-            System.out.println(request.getParameter("date_start"));
-            LocalDate date_start = LocalDate.parse(request.getParameter("date_start"));
-            LocalDate date_end = LocalDate.parse(request.getParameter("date_end"));
-            Client client =  clientDAO.get(Integer.parseInt(request.getParameter("client_id")));
-            double price = Double.parseDouble(request.getParameter("price"));
-            int capacity = Integer.parseInt(request.getParameter("capacity"));
 
-            if (reservationDAO.checkAvaible(date_start,date_end,client.getClientId())){
-                int id = (reservationDAO.insert(new Reservation(date_start, date_end, (date_end.getDayOfYear()-date_start.getDayOfYear())*price, capacity, client, client))).getReservationId(); // adds the new product to the list and gets its id automatically
-                response.sendRedirect(request.getContextPath() + "/reservations/reservation.jsp?reservation_id=" + id); // redirects to the new product page
-            }
-            else response.sendRedirect(request.getContextPath() + "/clients/all.jsp");
+            String firstName = request.getParameter("first_name");
+            String lastName = request.getParameter("last_name");
+            LocalDate birthDate = LocalDate.parse(request.getParameter("birth_date"));
+            String clientEmail = request.getParameter("mail");
+            String clientPhone = request.getParameter("telephone");
+
+            List<Client> clientsList = clientDAO.getAll();
+
+            Client newClient = new Client(firstName, lastName, clientEmail, clientPhone, birthDate);
+            int clientId = 0;
+            if (!checkDuplicate(newClient)) {
+                clientId = clientDAO.insert(newClient).getClientId();
+            } else {
+                for (Client client :clientsList) {
+                    if (newClient.getMail().equals(client.getMail()))
+                        clientId = client.getClientId();
+                }
+            } response.sendRedirect(request.getContextPath() + "/clients/client.jsp?client_id=" + clientId);
+        }
+
+
+        public boolean checkDuplicate(Client client) {
+
+           List<Client> clientList = clientDAO.getAll();
+            return clientList.stream()
+                    .anyMatch(e ->
+                            (e.getMail().equals(client.getMail())));
         }
 
 }
+
 
