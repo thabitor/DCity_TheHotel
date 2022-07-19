@@ -18,7 +18,6 @@
     HotelService service = HotelService.getInstance();
     ReservationDAO reservationDAO = new ReservationDAO(service.getManager());
     List<Room> roomsAvailable = reservationDAO.getRoomsDate(dateToLook);
-
 %>
 <html>
 <head>
@@ -37,7 +36,7 @@
                 <p><span>Capacity:</span> <%=room.getCapacity() %></p>
                 <p><span>Beds:</span> <%= room.getBeds()%></p>
                 <p><span>Price:</span> <%= room.getPrice()%></p>
-                <p><a href="../reservations?room_id=<%= room.getRoomId() %>">Book this room</a></p>
+                <p><a href="${pageContext.request.contextPath}/reservations/add?room_id=<%= room.getRoomId() %>&date_search=<%= dateToLook %>">Book this room</a></p>
             </div>
         </li>
         <% } %>

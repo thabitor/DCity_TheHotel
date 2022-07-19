@@ -92,7 +92,7 @@ public class ReservationDAO {
         List<Room> rooms = new ArrayList<>();
         for (Reservation reservation : reservations) {
             if(date.isBefore(reservation.getDateStart())||date.isAfter(reservation.getDateEnd())){
-                rooms.add(reservation.getRoom());
+                if (!rooms.contains(reservation.getRoom())) rooms.add(reservation.getRoom());
             }
         }
         return rooms;

@@ -29,11 +29,11 @@
         <input type="hidden" name="price" value="<%= room.getPrice() %>">
         <div>
             <label for="date_start">date_start</label>
-            <input type="date" id="date_start" name="date_start" value="<%= LocalDate.now() %>">
+            <input type="date" id="date_start" name="date_start" value="<%= request.getParameter("date_search") != null ? request.getParameter("date_search") : LocalDate.now() %>">
         </div>
         <div>
             <label for="date_end">date_end</label>
-            <input type="date" id="date_end" name="date_end" value="<%= LocalDate.now().plusDays(1) %>">
+            <input type="date" id="date_end" name="date_end" value="<%= request.getParameter("date_search") != null ? LocalDate.parse(request.getParameter("date_search")).plusDays(1) : LocalDate.now().plusDays(1) %>">
         </div>
         <button type="submit" class="btn btn-default">Make booking</button>
     </form>

@@ -33,7 +33,8 @@
                 <p><span>Number of guests:</span> <%= reservation.getCapacity() %></p>
                 <p><span>Room description:</span> <%= reservation.getRoom().getDescription() %></p>
                 <p><span>price:</span> <%= reservation.getPrice() %></p>
-                <p><a href="../reservations?reservation_id=<%= reservation.getReservationId() %>">reservation details</a></p>
+                <p><a href="../reservations?reservation_id=<%= reservation.getReservationId() %>">Reservation details</a></p>
+                <p><a onclick="return confirm('Are you sure?')" href="../reservations/cancel?reservation_id=<%= reservation.getReservationId() %>&client_email=<%= clientEmail %>">Cancel Reservation</a></p>
             </div>
         </li>
         <% } %>

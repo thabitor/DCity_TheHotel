@@ -13,7 +13,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 @WebServlet(name = "ServletAddReservation", value = "/reservations/add")
 public class ServletAddReservation extends HttpServlet {
@@ -25,7 +24,14 @@ public class ServletAddReservation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("room_id"));
-        response.sendRedirect(request.getContextPath() + "/reservations/add.jsp?room_id=" + id);
+        String date = request.getParameter("date_search");
+        System.out.println(date);
+        if(date != null) {
+            request.getRequestDispatcher("/reservations/add.jsp?room_id=" + id + "&date_search=" + date).forward(request, response);
+        }
+        else {
+            response.sendRedirect(request.getContextPath() + "/reservations/add.jsp?room_id=" + id);
+        }
     }
 
     @Override
