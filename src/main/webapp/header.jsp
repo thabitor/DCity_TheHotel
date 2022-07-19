@@ -53,7 +53,9 @@
 
             <ul class="nav navbar-nav">
                 <li><a href="${pageContext.request.contextPath}/">Home </a></li>
-                <li><a href="${pageContext.request.contextPath}/rooms">Rooms & Tariff</a></li>
+                <li><a href="${pageContext.request.contextPath}/clients">Signup</a></li>
+                <li><a href="${pageContext.request.contextPath}/rooms">Rooms</a></li>
+                <li><a href="${pageContext.request.contextPath}/reservations/findReservation.jsp">Reservations</a></li>
                 <li><a href="${pageContext.request.contextPath}/introduction.jsp">Introduction</a></li>
                 <li><a href="${pageContext.request.contextPath}/gallery.jsp">Gallery</a></li>
                 <li><a href="${pageContext.request.contextPath}/contact.jsp">Contact</a></li>

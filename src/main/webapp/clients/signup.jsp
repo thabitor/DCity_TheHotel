@@ -1,28 +1,7 @@
-<%@ page import="daos.ClientDAO" %>
-<%@ page import="services.HotelService" %>
-<%@ page import="entities.Client" %><%--
-  Created by IntelliJ IDEA.
-  User: JAVA
-  Date: 18/07/2022
-  Time: 15:24
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    HotelService service = HotelService.getInstance();
-    ClientDAO clientDAO = new ClientDAO(service.getManager());
-//    String id = request.getParameter("client_id"); // these variables change everytime we load this page
-//    if(id == null) {
-//        response.setStatus(404);
-//        return;
-//    }
-//    Client client = clientDAO.get(Integer.parseInt(id));
-%>
-<html>
-<head>
-    <title>Add client</title>
-</head>
-<body>
+<%@ include file="../header.jsp" %>
+<div class="container">
 <h1>Create a new account</h1>
 <form action="../clients" method="post">
     <input type="hidden" name="client_id" value="1">
@@ -36,7 +15,7 @@
     </div>
     <div>
         <label for="birth_date">Date of birth</label>
-        <input type="date" id="birth_date" name="birth_date">
+        <input type="date" id="birth_date" name="birth_date" value="<%= LocalDate.now().minusYears(20) %>">
     </div>
     <div>
         <label for="mail">Email address</label>
@@ -48,5 +27,5 @@
     </div>
     <button type="submit">Sign up</button>
 </form>
-</body>
-</html>
+</div>
+<%@ include file="../footer.jsp" %>
