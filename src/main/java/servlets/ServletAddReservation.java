@@ -30,7 +30,7 @@ public class ServletAddReservation extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // gets parameters from the form in reservations/add.jsp
+        // gets parameters from the form in reservations/signup.jsp
 
         Room room = roomDAO.get(Integer.parseInt(request.getParameter("room_id")));
         System.out.println(request.getParameter("date_start"));
